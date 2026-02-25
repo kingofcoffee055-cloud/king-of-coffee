@@ -1,0 +1,256 @@
+
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>King of Coffee</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f5f1e8;
+color:#3e2723;
+}
+
+/* HEADER */
+header{
+background:linear-gradient(to right,#D2B48C,#3e2723);
+color:white;
+text-align:center;
+padding:60px 20px;
+animation: fadeIn 2s ease-in;
+}
+
+header h1{
+font-size:3em;
+}
+
+header p{
+margin-top:10px;
+font-size:1.2em;
+}
+
+/* NAV */
+nav{
+background:#a1887f;
+padding:15px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#ffcc80;
+}
+
+/* SECCIONES */
+section{
+padding:60px 20px;
+text-align:center;
+}
+
+/* PRODUCTOS */
+.productos{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.card{
+background:white;
+width:250px;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.boton{
+background:#6d4c41;
+color:white;
+padding:10px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+margin-top:10px;
+width:100%;
+}
+
+.boton:hover{
+background:#3e2723;
+}
+
+/* CARRITO */
+.carrito{
+margin-top:30px;
+font-size:1.3em;
+}
+
+/* FORMULARIO */
+.formulario{
+max-width:400px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+input, textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+button[type="submit"]{
+background:#6d4c41;
+color:white;
+border:none;
+padding:10px;
+border-radius:5px;
+cursor:pointer;
+width:100%;
+}
+
+button[type="submit"]:hover{
+background:#3e2723;
+}
+
+/* FOOTER */
+footer{
+background:#3e2723;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+/* ANIMACIÓN */
+@keyframes fadeIn{
+from{opacity:0;}
+to{opacity:1;}
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.productos{
+flex-direction:column;
+align-items:center;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>King of Coffee </h1>
+<p>siente alegria en cada taza</p>
+</header>
+
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#productos">Productos</a>
+<a href="#contacto">Contacto</a>
+<a href="file:///D:/trabajo%20final/PAGINA2.HTML">Bebidas calientes</a>
+<a href="file:///D:/trabajo%20final/Frappes.html">Bebidas frias</a>
+<a href="file:///D:/trabajo%20final/postres.html">postres</a>
+</nav>
+
+<section id="inicio">
+<h2>Bienvenido</h2>
+<p>Disfruta del mejor café artesanal premium preparado con pasión.</p>
+</section>
+
+<section id="productos">
+<h2>Nuestro Menú</h2>
+
+<div class="productos">
+
+<div class="card">
+<img src="cafe.jpeg">
+<h3>Cafe</h3>
+<p>$75 MXN</p>
+<button class="boton" onclick="agregar(75)">Agregar al carrito</button>
+
+</div>
+
+<div class="card">
+<img src="postres.jpeg">
+<h3>pastel de chocolate</h3>
+<p>$90MXN</p>
+<button class="boton" onclick="agregar(90)">Agregar al carrito</button>
+</div>
+
+<div class="card">
+<img src="frappe.jpeg">
+<h3>frappe de fresa</h3>
+<p>$95 MXN</p>
+<button class="boton" onclick="agregar(95)">Agregar al carrito</button>
+</div>
+
+</div>
+
+<div class="carrito">
+Total: $<span id="total">0</span> MXN
+</div>
+
+</section>
+
+<section id="contacto">
+<h2>Contáctanos</h2>
+
+<div class="formulario">
+<form onsubmit="enviarMensaje(event)">
+<input type="text" placeholder="Nombre" required>
+<input type="email" placeholder="Correo" required>
+<textarea placeholder="Mensaje"></textarea>
+<button type="submit">Enviar Mensaje</button>
+</form>
+</div>
+
+</section>
+
+
+<script>
+let total = 0;
+
+function agregar(precio){
+total += precio;
+document.getElementById("total").innerText = total;
+}
+
+function enviarMensaje(event){
+event.preventDefault();
+alert("Mensaje enviado correctamente ");
+}
+</script>
+
+<a href="https://www.facebook.com/share/1HgkPAjE1P/" style="position: relative; left: 500px"><img src="1.png" width=30 heigth=30></a>
+<a href="https://www.instagram.com/king_of_coffee_1?gsh=Njl3MzU5aDVwcWM0" style="position: relative; left: 500px"><img src="insta.jfif.png" width=30 heigth=30></a>
+<a href="https://www.tiktok.com/@king_of_coffee2?_r=1&_t=ZS-94CJiB7PXe5" style="position: relative; left: 500px"><img src="tiktok.png" width=30 heigth=30></a>
+<a href="https://youtube.com/@kingofcoffee-i5g?si=3Yyq3ZY-hHqc-sth" style="position: relative; left: 500px"><img src="youtube.png" width=30 heigth=30></a>
+</body>
+</html>
